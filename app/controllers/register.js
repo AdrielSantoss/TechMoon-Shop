@@ -2,7 +2,6 @@ const bcrypt = require('bcrypt-nodejs');
 
 module.exports.register = (application, req, res) => {
     const data = req.body;
-
     req.assert('name', 'Nome é obrigatório.').notEmpty()
     req.assert('email', 'Email obrigatório.').notEmpty()
     req.assert('email', 'Email inválido.').isEmail()
